@@ -9,6 +9,7 @@ import Level1 from './components/pages/level1';
 export default class App extends React.Component{
   state = {
     active: true,
+    passLevel1: false,
   }
 
   start = (delta) => {
@@ -32,6 +33,13 @@ export default class App extends React.Component{
           <Level1></Level1>
         </View>
       );
+    }
+    if(this.state.passLevel1 == true){
+      return(
+        <View>
+          <Level1></Level1>
+        </View>
+      )
     }
     else{
       return (

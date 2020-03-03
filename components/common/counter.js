@@ -6,7 +6,7 @@ import Button from './button';
 export default class Counter extends React.Component {
   styles = StyleSheet.create({
     counter: {
-      fontSize: 32,
+      fontSize: 16,
       color: 'white',
       width: 50,
       left: 0,
@@ -27,12 +27,13 @@ export default class Counter extends React.Component {
       textAlign: 'center',
   },
     button: {
-      height: 30,
+      height: 50,
+      fontSize: 16,
   },
   });
   
     state = {
-        secondsPassed: 15,
+        secondsPassed: 10,
         stopwatchRunning: false,
     }
 
@@ -55,11 +56,17 @@ export default class Counter extends React.Component {
           },
           1000
         );
-  
+        if(this.state.secondsPassed <= 0){
+          this.setState({
+            stopwatchRunning: false,
+          })
+        }
+        else{
         // telling the app the timer start
-        this.setState({
-          stopwatchRunning: true,
-        })
+          this.setState({
+            stopwatchRunning: true,
+          })
+        }
       } else {
         // stopping the timer
         clearTimeout(this.timerId);
@@ -77,7 +84,7 @@ export default class Counter extends React.Component {
           <Text style={[this.styles.label]}>Time:</Text>
           <Text style={[this.styles.counter]} >{this.state.secondsPassed}</Text>
         <Button style={[this.styles.button]}
-          title="Toggle Stopwatch On/Off"
+          title="On/Off"
           onPress={this.toggleStopwatch}
         />
       </View>

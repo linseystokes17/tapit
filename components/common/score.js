@@ -7,7 +7,7 @@ export default class Score extends React.Component {
 
     styles = StyleSheet.create({
         counter: {
-            fontSize: 32,
+            fontSize: 16,
             color: 'white',
             right: 0,
             width: 50,

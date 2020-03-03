@@ -7,8 +7,11 @@ export default class Tile extends React.Component {
     button: {
       backgroundColor: 'gray',
       margin: 8,
+      top: 50,
       borderRadius: 4,
-      padding: 8
+      padding: 8,
+      height: 50,
+      
     },
     title: {
       color: 'white',
@@ -22,7 +25,7 @@ export default class Tile extends React.Component {
 
     return (
       <TouchableOpacity style={[this.styles.button, style]} onPress={onPress}>
-        <Text style={[this.styles.title, titleStyle]}>{title}</Text>
+        {/* <Text style={[this.styles.title, titleStyle]}>{title}</Text> */}
       </TouchableOpacity>
     );
   }
